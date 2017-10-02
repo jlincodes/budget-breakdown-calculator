@@ -36,6 +36,7 @@ This project will be implemented with the following technologies:
 **Day 1**:
 - Set up a general layout of HTML page for user inputs
 - Set up functions to perform calculations
+- Use `jQuery` to toggle open and close input forms for each category
 
 **Day 2**:
 - Learn `D3.js`
