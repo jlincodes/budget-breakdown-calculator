@@ -26,7 +26,7 @@ In Budget Calculator, users will be able to:
 This project will be implemented with the following technologies:
 
 - Vanilla JavaScript combined with `jQuery` for basic DOM manipulation and event handling.
-- `D3.js` for constructing the data visualization component.
+- `Chart.js` for constructing the data visualization component.
 
 ### Implementation Timeline
 
@@ -39,8 +39,7 @@ This project will be implemented with the following technologies:
 - Use `jQuery` to toggle open and close input forms for each category
 
 **Day 2**:
-- Learn `D3.js`
-- Render graph or pie chart
+- Learn `Chart.js` and render data visualization
 
 **Day 3**:
 - Continue working on functionality
