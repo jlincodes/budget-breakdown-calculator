@@ -4,7 +4,7 @@
 
 Budgeting can be intimidating. One could use an already existing budgeting application service, such as Mint or You Need a Budget, but that would require an account creation, linking up one's banking account, etc. Another alternative would be to use a spreadsheet to keep log expenses, but spreadsheets and formulas can be intimidating to the average user.
 
-This is where Basic Budget Calculator comes in - Basic Budget Calculator (or BBC) is, as the name implies, is a basic budget calculator. It's easy to use - just log your expenses, run the calculations, and check the graphs to see if you are within your financial means and what areas you could improve on.
+This is where Basic Budget Calculator comes in - Basic Budget Calculator is, as the name implies, a basic budget calculator. It's easy to use - just log your expenses, run the calculations, and check the graphs to see if you are within your financial means and what areas you could improve on.
 
 ### Functionality & MVP  
 
@@ -19,7 +19,7 @@ In Budget Calculator, users will be able to:
 
 
 ### Wireframes
-
+![Wireframe][wireframe]
 
 ### Architecture and Technologies
 
@@ -35,11 +35,15 @@ This project will be implemented with the following technologies:
 
 **Day 1**:
 - Set up a general layout of HTML page for user inputs
-- Learn `D3.js`
+- Set up functions to perform calculations
 
 **Day 2**:
+- Learn `D3.js`
+- Render graph or pie chart
 
 **Day 3**:
+- Continue working on functionality
+- Start on styling and presentation
 
 **Day 4**:
 - Styling and presentation
@@ -47,3 +51,5 @@ This project will be implemented with the following technologies:
 
 ### Bonus features
 - Financial tips to help users become more financially savvy.
+
+[wireframe]: https://github.com/julielin0812/basic-budget-calculator/blob/master/docs/basic-budget-calc-wireframe.png?raw=true
