@@ -42,7 +42,7 @@ input {
   float: right;
 }
 
-button {
+.button {
   cursor: pointer;
   font-size: 16px;
   border-radius: 3px;
