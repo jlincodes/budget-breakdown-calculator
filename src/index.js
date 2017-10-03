@@ -1,5 +1,24 @@
 import Chart from 'chart.js';
 let expensesData = [];
+let fixedExpenses, investments, variableExpenses;
+
+let rent, util, cell, internet;
+rent =  document.forms["budget-form"].element["rent"].value;
+util =  document.forms["budget-form"].element["util"].value;
+cell =  document.forms["budget-form"].element["cell"].value;
+internet =  document.forms["budget-form"].element["internet"].value;
+
+let retirement, savings;
+retirement =  document.forms["budget-form"].element["retirement"].value;
+savings =  document.forms["budget-form"].element["savings"].value;
+
+let groceries, hSupplies, pSupplies, transport;
+groceries =  document.forms["budget-form"].element["groceries"].value;
+hSupplies =  document.forms["budget-form"].element["hSupplies"].value;
+pSupplies =  document.forms["budget-form"].element["pSupplies"].value;
+transport =  document.forms["budget-form"].element["transport"].value;
+
+
 let ctx = document.getElementById("myChart");
 let myChart = new Chart(ctx, {
     type: 'bar',
