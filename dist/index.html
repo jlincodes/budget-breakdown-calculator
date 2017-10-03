@@ -1,8 +1,62 @@
 <html>
   <head>
-    <title>Getting Started</title>
+    <title>Basic Budget Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="../application.css">
   </head>
   <body>
-    <script src="bundle.js"></script>
+    <h1>Basic Budget Calculator</h1>
+    <div class="main">
+      <div class="graph-container">
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <script src="bundle.js"></script>
+      </div>
+      <div class="form-container">
+        <span>
+          <label>Monthly Budget:
+            <input type="text" id="monthly" name="" value="">
+          </label>
+        </span>
+        <form class="budget-form" action="" method="">
+          <h3>Fixed Expenses</h3>
+          <label>Rent:
+            <input type="text" id="rent" name="rent" value="">
+          </label>
+          <label>Utilities:
+            <input type="text" id="utilities" name="utilities" value="">
+          </label>
+          <label>Cellular:
+            <input type="text" id="cell" name="cell" value="">
+          </label>
+          <label>Internet:
+            <input type="text" id="internet" name="internet" value="">
+          </label>
+
+          <h3>Investments/Savings</h3>
+          <label>Retirement (401K/Roth IRA/etc.):
+            <input type="text" id="retirement" name="retirement" value="">
+          </label>
+          <label>Savings:
+            <input type="text" id="savings" name="savings" value="">
+          </label>
+
+          <h3>Variable Expenses</h3>
+          <label>Groceries:
+            <input type="text" id="groceries" name="groceries" value="">
+          </label>
+          <label>Household Supplies:
+            <input type="text" id="h-supplies" name="h-supplies" value="">
+          </label>
+          <label>Personal Supplies:
+            <input type="text" id="p-supplies" name="p-supplies" value="">
+          </label>
+          <label>Transportation:
+            <input type="text" id="transport" name="transport" value="">
+          </label>
+
+          <button type="submit" id="button" name="button">Calculate!</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
