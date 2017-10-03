@@ -9,13 +9,12 @@
     <div class="main">
       <div class="graph-container">
         <canvas id="myChart" width="400" height="400"></canvas>
-        <!-- <script src="bundle.js"></script> -->
       </div>
       <div class="form-container">
 
         <span>
           <label>Monthly Budget:
-            <input type="text" id="monthly" name="" value="">
+            <input type="text" id="budget" name="" value="">
           </label>
         </span>
 
@@ -55,6 +54,10 @@
           <label>Transportation:
             <input type="text" id="transport" name="transport" value="">
           </label>
+
+          <h3>Guilt-free Spending</h3>
+          <label>Dining out, movies, shopping, etc.
+          <input type="text" id="excess" value="" disabled></label>
 
           <input type="button" id ="button" class="button" value="Calculate">
         </form>
