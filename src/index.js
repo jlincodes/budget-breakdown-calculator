@@ -22,14 +22,22 @@ document.getElementById('button').addEventListener('click', function() {
   let transport =  parseFloat(document.getElementById("transport").value);
   let variableExpenses = groceries + hSupplies + pSupplies + transport;
   expensesData.push(variableExpenses);
-  
+
+  let budget = parseFloat(document.getElementById("budget").value);
+  let expenses = fixedExpenses + investments + variableExpenses;
+  let excess = budget - expenses;
+  expensesData.push(excess);
+
+  document.getElementById("excess").value = excess;
+
   let ctx = document.getElementById("myChart");
   let myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ["Fixed Expenses", "Investments/Savings", "Variable Expenses"],
+      labels: ["Fixed Expenses", "Investments/Savings", "Variable Expenses",
+        "Guilt-free Spending"],
       datasets: [{
-        label: 'Expenses',
+        label: 'Expenses Total',
         data: expensesData,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
