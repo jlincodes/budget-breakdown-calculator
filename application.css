@@ -1,0 +1,52 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #e0e0e0;
+}
+
+h1 {
+  text-align: center;
+}
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  padding: 50px
+}
+
+.form-container {
+  width: 50%;
+  min-width: 430px;
+  background-color: white;
+  padding: 20px;
+}
+.graph-container {
+  width: 50%;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 0 0 5px 0;
+}
+
+input {
+  font-size: 14px;
+  display: inline-block;
+  float: right;
+}
+
+button {
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: transparent;
+  width: 100px;
+  height: 30px;
+}
