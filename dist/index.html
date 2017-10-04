@@ -11,12 +11,19 @@
         <canvas id="myChart" width="400" height="400"></canvas>
       </div>
       <div class="form-container">
+        <input type="button" id="toggle-btn" value="Show Directions">
+        <br/>
+        <br/>
+        <p id="directions" style="display:none">
+          Enter a total monthly budget. Then type in a budget amount for each subcategory (numbers only, please). Lastly, hit calculate to render a doughnut chart of your monthly expenses.
+        </p>
 
-        <span>
-          <label>Monthly Budget:
+        <div>
+          <label><h3>Monthly Budget:
             <input type="text" id="budget" name="" value="">
+            </h3>
           </label>
-        </span>
+        </div>
 
         <form id="budget-form" class="budget-form" action="" method="">
           <h3>Fixed Expenses</h3>
@@ -57,10 +64,15 @@
 
           <h3>Guilt-free Spending</h3>
           <label>Dining out, movies, shopping, etc.
+            <br/>
+            (This will be calculated for you)
           <input type="text" id="excess" value="" disabled></label>
 
           <input type="button" id ="button" class="button" value="Calculate">
         </form>
+        <div id="error">
+          
+        </div>
         <script src="bundle.js"></script>
       </div>
     </div>
