@@ -17215,6 +17215,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
 
 
+// RENDERS DOUGHNUT CHART
 document.getElementById('button').addEventListener('click', function() {
   let expensesData = [];
 
@@ -17298,6 +17299,19 @@ document.getElementById('button').addEventListener('click', function() {
 
   let ctx = document.getElementById("myChart");
   let myChart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, config);
+});
+
+// TOGGLE SHOW/HIDE DIRECTIONS
+document.getElementById("toggle-btn").addEventListener('click', function() {
+  const directions = document.getElementById('directions');
+  let toggleBtn = document.getElementById('toggle-btn');
+  if (directions.style.display === 'none') {
+    directions.style.display = 'block';
+    toggleBtn.value = 'Hide Directions';
+  } else {
+    directions.style.display = 'none';
+    toggleBtn.value = "Show Directions";
+  }
 });
 
 

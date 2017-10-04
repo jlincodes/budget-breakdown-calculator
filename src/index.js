@@ -1,5 +1,6 @@
 import Chart from 'chart.js';
 
+// RENDERS DOUGHNUT CHART
 document.getElementById('button').addEventListener('click', function() {
   let expensesData = [];
 
@@ -83,4 +84,17 @@ document.getElementById('button').addEventListener('click', function() {
 
   let ctx = document.getElementById("myChart");
   let myChart = new Chart(ctx, config);
+});
+
+// TOGGLE SHOW/HIDE DIRECTIONS
+document.getElementById("toggle-btn").addEventListener('click', function() {
+  const directions = document.getElementById('directions');
+  let toggleBtn = document.getElementById('toggle-btn');
+  if (directions.style.display === 'none') {
+    directions.style.display = 'block';
+    toggleBtn.value = 'Hide Directions';
+  } else {
+    directions.style.display = 'none';
+    toggleBtn.value = "Show Directions";
+  }
 });
