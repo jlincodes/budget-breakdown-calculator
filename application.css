@@ -4,31 +4,11 @@ body {
 }
 
 h1 {
-  padding: 15px 0 0 0;
-  text-align: center;
-}
-.main {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  padding: 0 50px 0 50px;
-}
-
-.form-container {
-  width: 50%;
-  min-width: 430px;
-  background-color: white;
-  padding: 20px;
-}
-.graph-container {
-  width: 50%;
-  background-color: white;
-  padding: 20px;
+  padding: 15px 0 15px 0;
   text-align: center;
 }
 
 form {
-  width: 100%;
   display: flex;
   flex-direction: column;
 }
