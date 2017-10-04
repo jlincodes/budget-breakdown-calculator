@@ -1,16 +1,18 @@
 <html>
   <head>
     <title>Basic Budget Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="../application.css">
   </head>
   <body>
-    <h1>Basic Budget Calculator</h1>
-    <div class="main">
-      <div class="graph-container">
-        <canvas id="myChart" width="400" height="400"></canvas>
-      </div>
-      <div class="form-container">
+    <!-- HEADER -->
+    <div class="container" id="header">
+      <h1>Basic Budget Calculator</h1>
+    </div>
+
+    <div class="container">
+      <div class="col-md-5">
         <input type="button" id="toggle-btn" value="Show Directions">
         <br/>
         <br/>
@@ -18,14 +20,11 @@
           Enter a total monthly budget. Then type in a budget amount for each subcategory (numbers only, please). Lastly, hit calculate to render a doughnut chart of your monthly expenses.
         </p>
 
-        <div>
-          <label><h3>Monthly Budget:
-            <input type="text" id="budget" name="" value="">
-            </h3>
-          </label>
-        </div>
-
+        <br/>
         <form id="budget-form" class="budget-form" action="" method="">
+          <label>Monthly Budget:
+            <input type="text" id="budget" name="" value="">
+          </label>
           <h3>Fixed Expenses</h3>
           <label>Rent:
             <input type="text" id="rent" name="rent" value="">
@@ -66,15 +65,20 @@
           <label>Dining out, movies, shopping, etc.
             <br/>
             (This will be calculated for you)
-          <input type="text" id="excess" value="" disabled></label>
+            <input type="text" id="excess" value="" disabled></label>
 
-          <input type="button" id ="button" class="button" value="Calculate">
-        </form>
-        <div id="error">
-          
-        </div>
-        <script src="bundle.js"></script>
+            <input type="button" id ="button" class="button" value="Calculate">
+          </form>
+      </div>
+      <div class="col-md-7">
+        <canvas id="myChart"></canvas>
       </div>
     </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bundle.js"></script>
   </body>
 </html>
