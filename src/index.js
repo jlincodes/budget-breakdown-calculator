@@ -63,7 +63,7 @@ document.getElementById('button').addEventListener('click', function() {
       }
     ],
       // labels: ["Fixed", "Investments", "Variable", "Excess"]
-      labels: ["rent", "util", "cell", "internet", "retirement", "savings", "groceries", "hSupplies", "pSupplies", "transport", "excess"]
+      labels: ["Rent", "Utilities", "Cell", "Internet", "Retirement", "Savings", "Groceries", "Household", "Personal", "Transport", "Guilt-free"]
     },
     options: {
       responsive: true,
