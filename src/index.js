@@ -72,7 +72,7 @@ document.getElementById('button').addEventListener('click', function() {
       },
       title: {
         display: true,
-        text: 'Doughtnut Chart Test'
+        text: 'Monthly Expenses'
       },
       animation: {
         animateScale: true,

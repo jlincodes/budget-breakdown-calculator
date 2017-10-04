@@ -17278,7 +17278,7 @@ document.getElementById('button').addEventListener('click', function() {
       }
     ],
       // labels: ["Fixed", "Investments", "Variable", "Excess"]
-      labels: ["rent", "util", "cell", "internet", "retirement", "savings", "groceries", "hSupplies", "pSupplies", "transport", "excess"]
+      labels: ["Rent", "Utilities", "Cell", "Internet", "Retirement", "Savings", "Groceries", "Household", "Personal", "Transport", "Guilt-free"]
     },
     options: {
       responsive: true,
@@ -17287,7 +17287,7 @@ document.getElementById('button').addEventListener('click', function() {
       },
       title: {
         display: true,
-        text: 'Doughtnut Chart Test'
+        text: 'Monthly Expenses'
       },
       animation: {
         animateScale: true,
