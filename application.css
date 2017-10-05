@@ -24,25 +24,30 @@ input {
   text-align: right;
 }
 
+input:focus {
+  outline-style: dotted;
+  outline-color: ##e8eaf2;
+  outline-width: medium;
+}
+
 .button {
   cursor: pointer;
   font-size: 14px;
   border-radius: 3px;
+  border: 1px solid #afafaf;
   background-color: transparent;
   width: 100px;
   height: 30px;
   text-align: center;
 }
 
+.button:hover {
+  box-shadow: 3px 3px 1px #a3a3a3;
+}
+
 #toggle-btn {
   float: left;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 3px;
-  background-color: transparent;
   width: 140px;
-  height: 30px;
-  text-align: center;
 }
 
 #error {
