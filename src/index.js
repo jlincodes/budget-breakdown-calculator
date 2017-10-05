@@ -5,25 +5,49 @@ document.getElementById('button').addEventListener('click', function() {
   let errContainer = document.getElementById('error');
   errContainer.innerHTML = "";
 
-  let rent =  parseFloat(document.getElementById("rent").value);
-  let util =  parseFloat(document.getElementById("util").value);
-  let cell =  parseFloat(document.getElementById("cell").value);
-  let internet =  parseFloat(document.getElementById("internet").value);
-  let fixedExpenses = rent + util + cell + internet;
+  // let rent =  parseFloat(document.getElementById("rent").value);
+  // let util =  parseFloat(document.getElementById("util").value);
+  // let cell =  parseFloat(document.getElementById("cell").value);
+  // let internet =  parseFloat(document.getElementById("internet").value);
+  // let fixedExpenses = rent + util + cell + internet;
+  //
+  // let retirement =  parseFloat(document.getElementById("retirement").value);
+  // let savings =  parseFloat(document.getElementById("savings").value);
+  // let investments = retirement + savings;
+  //
+  // let groceries =  parseFloat(document.getElementById("groceries").value);
+  // let hSupplies =  parseFloat(document.getElementById("hSupplies").value);
+  // let pSupplies =  parseFloat(document.getElementById("pSupplies").value);
+  // let transport =  parseFloat(document.getElementById("transport").value);
+  // let variableExpenses = groceries + hSupplies + pSupplies + transport;
+  //
+  // let budget = parseFloat(document.getElementById("budget").value);
+  // let expenses = fixedExpenses + investments + variableExpenses;
+  // let excess = budget - expenses;
 
-  let retirement =  parseFloat(document.getElementById("retirement").value);
-  let savings =  parseFloat(document.getElementById("savings").value);
-  let investments = retirement + savings;
+  // Creates array-like object
+  let expenses = document.getElementsByClassName("expense");
 
-  let groceries =  parseFloat(document.getElementById("groceries").value);
-  let hSupplies =  parseFloat(document.getElementById("hSupplies").value);
-  let pSupplies =  parseFloat(document.getElementById("pSupplies").value);
-  let transport =  parseFloat(document.getElementById("transport").value);
-  let variableExpenses = groceries + hSupplies + pSupplies + transport;
+  let dataArr = [];
+  let data;
+  let expensesSum = 0;
+
+  // Iterate through array-like object to fetch & parse data
+  let i;
+  for (i = 0; i < expenses.length; i++) {
+    data = parseFloat(expenses[i].value);
+
+    if (!data) {
+      data = 0;
+    }
+
+    dataArr.push(data);
+    expensesSum += data;
+  }
 
   let budget = parseFloat(document.getElementById("budget").value);
-  let expenses = fixedExpenses + investments + variableExpenses;
-  let excess = budget - expenses;
+  let excess = budget - expensesSum;
+  dataArr.push(excess);
 
   // Render excess amount into input field
   document.getElementById("excess").value = excess;
@@ -33,19 +57,7 @@ document.getElementById('button').addEventListener('click', function() {
     data: {
       datasets: [{
         label: 'Expenses',
-        data: [
-          rent,
-          util,
-          cell,
-          internet,
-          retirement,
-          savings,
-          groceries,
-          hSupplies,
-          pSupplies,
-          transport,
-          excess
-        ],
+        data: dataArr,
         backgroundColor: [
           'rgb(255, 128, 128)',
           'rgb(255,0,0)',
@@ -96,7 +108,7 @@ document.getElementById('button').addEventListener('click', function() {
   myChart = new Chart(ctx, config);
 
 // RENDERS ERROR MSG IF BUDGET IS EXCEEDED
-  if (expenses > budget) {
+  if (excess < 0) {
     ctx.remove();
     errContainer.innerHTML =
     '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>' +
