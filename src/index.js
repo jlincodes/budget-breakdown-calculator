@@ -66,7 +66,7 @@ document.getElementById('button').addEventListener('click', function() {
     options: {
       responsive: true,
       legend: {
-        position: 'top'
+        position: 'right'
       },
       title: {
         display: true,
