@@ -3,32 +3,27 @@ import Chart from 'chart.js';
 // RENDERS DOUGHNUT CHART
 document.getElementById('button').addEventListener('click', function() {
 
-  let expensesData = [];
-
   let rent =  parseFloat(document.getElementById("rent").value);
   let util =  parseFloat(document.getElementById("util").value);
   let cell =  parseFloat(document.getElementById("cell").value);
   let internet =  parseFloat(document.getElementById("internet").value);
   let fixedExpenses = rent + util + cell + internet;
-  // expensesData.push(fixedExpenses);
 
   let retirement =  parseFloat(document.getElementById("retirement").value);
   let savings =  parseFloat(document.getElementById("savings").value);
   let investments = retirement + savings;
-  // expensesData.push(investments);
 
   let groceries =  parseFloat(document.getElementById("groceries").value);
   let hSupplies =  parseFloat(document.getElementById("hSupplies").value);
   let pSupplies =  parseFloat(document.getElementById("pSupplies").value);
   let transport =  parseFloat(document.getElementById("transport").value);
   let variableExpenses = groceries + hSupplies + pSupplies + transport;
-  // expensesData.push(variableExpenses);
 
   let budget = parseFloat(document.getElementById("budget").value);
   let expenses = fixedExpenses + investments + variableExpenses;
   let excess = budget - expenses;
-  // expensesData.push(excess);
 
+  // Render excess amount into input field
   document.getElementById("excess").value = excess;
 
   let config = {
@@ -64,8 +59,9 @@ document.getElementById('button').addEventListener('click', function() {
         ]
       }
     ],
-      // labels: ["Fixed", "Investments", "Variable", "Excess"]
-      labels: ["Rent", "Utilities", "Cell", "Internet", "Retirement", "Savings", "Groceries", "Household", "Personal", "Transport", "Guilt-free"]
+      labels: ["Rent", "Utilities", "Cell", "Internet", "Retirement",
+        "Savings", "Groceries", "Household", "Personal", "Transport",
+        "Guilt-free"]
     },
     options: {
       responsive: true,
@@ -83,26 +79,24 @@ document.getElementById('button').addEventListener('click', function() {
     }
   };
 
-
-
   let ctx = document.getElementById("myChart");
-  let chartContainer = document.getElementById('chart-container');
-  let newCanvas = document.createElement('canvas');
 
   if (ctx) {
     ctx.remove();
+    let newCanvas = document.createElement('canvas');
     newCanvas.setAttribute("id", "myChart");
+    let chartContainer = document.getElementById('chart-container');
     chartContainer.appendChild(newCanvas);
     ctx = document.getElementById("myChart");
-  } else {
-    if (expenses > budget) {
-      document.getElementById('error').innerHTML =
-      '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>';
-    } else {
-      let myChart = new Chart(ctx, config);
-    }
+    let myChart = new Chart(ctx, config);
   }
-  
+
+  if (expenses > budget) {
+    ctx.remove();
+    document.getElementById('error').innerHTML =
+    '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>';
+  }
+
 });
 
 
