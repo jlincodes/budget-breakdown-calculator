@@ -21,6 +21,7 @@ input {
   font-size: 14px;
   display: inline-block;
   float: right;
+  text-align: right;
 }
 
 .button {
@@ -30,7 +31,9 @@ input {
   background-color: transparent;
   width: 100px;
   height: 30px;
+  text-align: center;
 }
+
 
 #toggle-btn {
   float: left;
