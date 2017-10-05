@@ -17261,6 +17261,7 @@ document.getElementById('button').addEventListener('click', function() {
   }
 
   let budget = parseFloat(document.getElementById("budget").value);
+  if (!budget) budget = 0;
   let excess = budget - expensesSum;
   dataArr.push(excess);
 
