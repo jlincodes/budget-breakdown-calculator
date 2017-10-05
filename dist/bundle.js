@@ -17217,6 +17217,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // RENDERS DOUGHNUT CHART
 document.getElementById('button').addEventListener('click', function() {
+  let errContainer = document.getElementById('error');
+  errContainer.innerHTML = "";
 
   let rent =  parseFloat(document.getElementById("rent").value);
   let util =  parseFloat(document.getElementById("util").value);
@@ -17308,11 +17310,12 @@ document.getElementById('button').addEventListener('click', function() {
   ctx = document.getElementById("myChart");
   myChart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, config);
 
-
+// RENDERS ERROR MSG IF BUDGET IS EXCEEDED
   if (expenses > budget) {
     ctx.remove();
-    document.getElementById('error').innerHTML =
-    '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>';
+    errContainer.innerHTML =
+    '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>' +
+    '<p>Try readjusting your variable expenses or increasing your monthly budget.</p>';
   }
 
 });

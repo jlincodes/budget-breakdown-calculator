@@ -2,6 +2,8 @@ import Chart from 'chart.js';
 
 // RENDERS DOUGHNUT CHART
 document.getElementById('button').addEventListener('click', function() {
+  let errContainer = document.getElementById('error');
+  errContainer.innerHTML = "";
 
   let rent =  parseFloat(document.getElementById("rent").value);
   let util =  parseFloat(document.getElementById("util").value);
@@ -93,11 +95,12 @@ document.getElementById('button').addEventListener('click', function() {
   ctx = document.getElementById("myChart");
   myChart = new Chart(ctx, config);
 
-
+// RENDERS ERROR MSG IF BUDGET IS EXCEEDED
   if (expenses > budget) {
     ctx.remove();
-    document.getElementById('error').innerHTML =
-    '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>';
+    errContainer.innerHTML =
+    '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>' +
+    '<p>Try readjusting your variable expenses or increasing your monthly budget.</p>';
   }
 
 });
