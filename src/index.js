@@ -80,16 +80,19 @@ document.getElementById('button').addEventListener('click', function() {
   };
 
   let ctx = document.getElementById("myChart");
+  let myChart;
 
   if (ctx) {
     ctx.remove();
-    let newCanvas = document.createElement('canvas');
-    newCanvas.setAttribute("id", "myChart");
-    let chartContainer = document.getElementById('chart-container');
-    chartContainer.appendChild(newCanvas);
-    ctx = document.getElementById("myChart");
-    let myChart = new Chart(ctx, config);
   }
+
+  let newCanvas = document.createElement('canvas');
+  newCanvas.setAttribute("id", "myChart");
+  let chartContainer = document.getElementById('chart-container');
+  chartContainer.appendChild(newCanvas);
+  ctx = document.getElementById("myChart");
+  myChart = new Chart(ctx, config);
+
 
   if (expenses > budget) {
     ctx.remove();
