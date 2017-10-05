@@ -2,6 +2,7 @@ import Chart from 'chart.js';
 
 // RENDERS DOUGHNUT CHART
 document.getElementById('button').addEventListener('click', function() {
+
   let expensesData = [];
 
   let rent =  parseFloat(document.getElementById("rent").value);
@@ -82,9 +83,30 @@ document.getElementById('button').addEventListener('click', function() {
     }
   };
 
+
+
   let ctx = document.getElementById("myChart");
-  let myChart = new Chart(ctx, config);
+  let chartContainer = document.getElementById('chart-container');
+  let newCanvas = document.createElement('canvas');
+
+  if (ctx) {
+    ctx.remove();
+    newCanvas.setAttribute("id", "myChart");
+    chartContainer.appendChild(newCanvas);
+    ctx = document.getElementById("myChart");
+  } else {
+    if (expenses > budget) {
+      document.getElementById('error').innerHTML =
+      '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>';
+    } else {
+      let myChart = new Chart(ctx, config);
+    }
+  }
+  
 });
+
+
+
 
 // TOGGLE SHOW/HIDE DIRECTIONS
 document.getElementById("toggle-btn").addEventListener('click', function() {

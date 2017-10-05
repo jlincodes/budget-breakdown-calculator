@@ -17217,6 +17217,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // RENDERS DOUGHNUT CHART
 document.getElementById('button').addEventListener('click', function() {
+
   let expensesData = [];
 
   let rent =  parseFloat(document.getElementById("rent").value);
@@ -17297,9 +17298,30 @@ document.getElementById('button').addEventListener('click', function() {
     }
   };
 
+
+
   let ctx = document.getElementById("myChart");
-  let myChart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, config);
+  let chartContainer = document.getElementById('chart-container');
+  let newCanvas = document.createElement('canvas');
+
+  if (ctx) {
+    ctx.remove();
+    newCanvas.setAttribute("id", "myChart");
+    chartContainer.appendChild(newCanvas);
+    ctx = document.getElementById("myChart");
+  } else {
+    if (expenses > budget) {
+      document.getElementById('error').innerHTML =
+      '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>';
+    } else {
+      let myChart = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(ctx, config);
+    }
+  }
+  
 });
+
+
+
 
 // TOGGLE SHOW/HIDE DIRECTIONS
 document.getElementById("toggle-btn").addEventListener('click', function() {

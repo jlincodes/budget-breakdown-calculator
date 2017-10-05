@@ -3,7 +3,7 @@
     <title>Basic Budget Calculator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="../application.css">
+    <link rel="stylesheet" href="application.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -69,8 +69,9 @@
 
             <input type="button" id ="button" class="button" value="Calculate">
           </form>
+          <div id="error"></div>
       </div>
-      <div class="col-md-7">
+      <div id="chart-container" class="col-md-7">
         <canvas id="myChart"></canvas>
       </div>
     </div>
@@ -79,6 +80,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="bundle.js"></script>
+    <script src="dist/bundle.js"></script>
   </body>
 </html>
