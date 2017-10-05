@@ -34,7 +34,6 @@ input {
   text-align: center;
 }
 
-
 #toggle-btn {
   float: left;
   cursor: pointer;
@@ -43,5 +42,11 @@ input {
   background-color: transparent;
   width: 140px;
   height: 30px;
+  text-align: center;
+}
+
+#error {
+  color: red;
+  font-weight: bold;
   text-align: center;
 }
