@@ -53,7 +53,7 @@ This project will be implemented with the following technologies:
 - Render addition chart (bar, line, etc) to render expenses by umbrella categories.
 - Financial tips to help users become more financially savvy.
 
-[screenshot]: https://media.giphy.com/media/l378hqPg0Ngc1bZCw/giphy.gif
+[screenshot]: https://github.com/julielin0812/basic-budget-calculator/blob/master/docs/Screenshots/Screen%20Shot%202017-10-05%20at%2012.22.21%20PM.png?raw=true
 
 <!-- ## Extra to-dos:
 - [x] Make it work if I accidentally clear an input field. (I did that, and it told me that my guilt-free spending was NaN.)
