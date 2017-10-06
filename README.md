@@ -19,7 +19,7 @@ In Budget Calculator, users will be able to:
 
 
 ### Screenshot
-![Screenshot][]
+![Screenshot][screenshot]
 
 ### Architecture and Technologies
 
@@ -53,7 +53,7 @@ This project will be implemented with the following technologies:
 - Render addition chart (bar, line, etc) to render expenses by umbrella categories.
 - Financial tips to help users become more financially savvy.
 
-[screenshot]:
+[screenshot]: https://media.giphy.com/media/l378hqPg0Ngc1bZCw/giphy.gif
 
 <!-- ## Extra to-dos:
 - [x] Make it work if I accidentally clear an input field. (I did that, and it told me that my guilt-free spending was NaN.)
