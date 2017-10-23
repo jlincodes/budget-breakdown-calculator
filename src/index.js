@@ -5,26 +5,6 @@ document.getElementById('button').addEventListener('click', function() {
   let errContainer = document.getElementById('error');
   errContainer.innerHTML = "";
 
-  // let rent =  parseFloat(document.getElementById("rent").value);
-  // let util =  parseFloat(document.getElementById("util").value);
-  // let cell =  parseFloat(document.getElementById("cell").value);
-  // let internet =  parseFloat(document.getElementById("internet").value);
-  // let fixedExpenses = rent + util + cell + internet;
-  //
-  // let retirement =  parseFloat(document.getElementById("retirement").value);
-  // let savings =  parseFloat(document.getElementById("savings").value);
-  // let investments = retirement + savings;
-  //
-  // let groceries =  parseFloat(document.getElementById("groceries").value);
-  // let hSupplies =  parseFloat(document.getElementById("hSupplies").value);
-  // let pSupplies =  parseFloat(document.getElementById("pSupplies").value);
-  // let transport =  parseFloat(document.getElementById("transport").value);
-  // let variableExpenses = groceries + hSupplies + pSupplies + transport;
-  //
-  // let budget = parseFloat(document.getElementById("budget").value);
-  // let expenses = fixedExpenses + investments + variableExpenses;
-  // let excess = budget - expenses;
-
   // Creates array-like object
   let expenses = document.getElementsByClassName("expense");
 
