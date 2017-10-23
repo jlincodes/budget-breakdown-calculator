@@ -1,10 +1,10 @@
-# Basic Budget Calculator
+# Budget Breakdown Calculator
 
 ### Background and Overview
 
 Budgeting can be intimidating. One could use an already existing budgeting application service, such as Mint or You Need a Budget, but that would require an account creation, linking up one's banking account, etc. Another alternative would be to use a spreadsheet to keep log expenses, but spreadsheets and formulas can be intimidating to the average user.
 
-This is where Basic Budget Calculator comes in - Basic Budget Calculator is, as the name implies, a basic budget calculator. It's easy to use - just log your expenses, run the calculations, and check the graphs to see if you are within your financial means and what areas you could improve on.
+This is where Budget Breakdown Calculator comes in - Budget Breakdown Calculator is, as the name implies, a budget breakdown calculator. It's easy to use - just log your expenses, run the calculations, and check the graphs to see if you are within your financial means and what areas you could improve on.
 
 ### Functionality & MVP  
 
@@ -53,7 +53,7 @@ This project will be implemented with the following technologies:
 - Render addition chart (bar, line, etc) to render expenses by umbrella categories.
 - Financial tips to help users become more financially savvy.
 
-[screenshot]: https://github.com/julielin0812/basic-budget-calculator/blob/master/docs/Screenshots/Screen%20Shot%202017-10-05%20at%2012.22.21%20PM.png?raw=true
+[screenshot]:
 
 <!-- ## Extra to-dos:
 - [x] Make it work if I accidentally clear an input field. (I did that, and it told me that my guilt-free spending was NaN.)
