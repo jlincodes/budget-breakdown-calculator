@@ -1,6 +1,64 @@
 import Chart from 'chart.js';
 
-// RENDERS DOUGHNUT CHART
+// SAMPLE DATA FOR INITIAL CHART RENDER
+let budget = 2000;
+let dataArr = [1000, 50, 50, 50, 100, 100, 100, 100, 100, 100, 250];
+let excess = 250;
+
+// DOUGHNUT CHART
+let config = {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      label: 'Expenses',
+      data: dataArr,
+      backgroundColor: [
+        'rgb(255, 128, 128)',
+        'rgb(255,0,0)',
+        'rgb(255,165,0)',
+        'rgb(255,255,0)',
+        'rgb(128, 255, 191)',
+        'rgb(0,255,0)',
+        'rgb(51, 153, 255)',
+        'rgb(0, 0, 255)',
+        'rgb(128, 128, 255)',
+        'rgb(102, 0, 204)',
+        'rgb(128, 0, 128)'
+      ]
+    }
+  ],
+  labels: ["Rent", "Utilities", "Cell", "Internet", "Retirement",
+  "Savings", "Groceries", "Household", "Personal", "Transport",
+  "Guilt-free"]
+  },
+  options: {
+    responsive: true,
+    legend: {
+      position: 'right'
+    },
+    title: {
+      display: true,
+      text: 'Monthly Expenses'
+    },
+    animation: {
+      animateScale: true,
+      animateRotate: true
+    }
+  }
+};
+
+// INITIAL RENDER OF CHART UPON WINDOW LOAD
+window.onload = function() {
+  let ctx = document.getElementById("myChart");
+  let myChart;
+
+  resetCanvas(ctx);
+
+  ctx = document.getElementById("myChart");
+  myChart = new Chart(ctx, config);
+};
+
+// RENDERS DOUGHNUT CHART UPON CALCULATE CLICK
 document.getElementById('button').addEventListener('click', function() {
   let errContainer = document.getElementById('error');
   errContainer.innerHTML = "";
@@ -8,7 +66,7 @@ document.getElementById('button').addEventListener('click', function() {
   // Creates array-like object
   let expenses = document.getElementsByClassName("expense");
 
-  let dataArr = [];
+  dataArr = [];
   let data;
   let expensesSum = 0;
 
@@ -25,66 +83,25 @@ document.getElementById('button').addEventListener('click', function() {
     expensesSum += data;
   }
 
-  let budget = parseFloat(document.getElementById("budget").value);
+  budget = parseFloat(document.getElementById("budget").value);
   if (!budget) budget = 0;
-  let excess = budget - expensesSum;
+  excess = budget - expensesSum;
   dataArr.push(excess);
 
-  // Render excess amount into input field
+  // RENDER EXCESS AMOUNT INTO FIELD
   document.getElementById("excess").value = excess;
 
-  let config = {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        label: 'Expenses',
-        data: dataArr,
-        backgroundColor: [
-          'rgb(255, 128, 128)',
-          'rgb(255,0,0)',
-          'rgb(255,165,0)',
-          'rgb(255,255,0)',
-          'rgb(128, 255, 191)',
-          'rgb(0,255,0)',
-          'rgb(51, 153, 255)',
-          'rgb(0, 0, 255)',
-          'rgb(128, 128, 255)',
-          'rgb(102, 0, 204)',
-          'rgb(128, 0, 128)'
-        ]
-      }
-    ],
-      labels: ["Rent", "Utilities", "Cell", "Internet", "Retirement",
-        "Savings", "Groceries", "Household", "Personal", "Transport",
-        "Guilt-free"]
-    },
-    options: {
-      responsive: true,
-      legend: {
-        position: 'right'
-      },
-      title: {
-        display: true,
-        text: 'Monthly Expenses'
-      },
-      animation: {
-        animateScale: true,
-        animateRotate: true
-      }
-    }
-  };
+  // REPLACES SAMPLE DATA WITH DATA FROM FORM INPUT
+  config.data.datasets.forEach( (dataset) => {
+    dataset.data = dataArr;
+  });
+
 
   let ctx = document.getElementById("myChart");
   let myChart;
 
-  if (ctx) {
-    ctx.remove();
-  }
+  resetCanvas(ctx);
 
-  let newCanvas = document.createElement('canvas');
-  newCanvas.setAttribute("id", "myChart");
-  let chartContainer = document.getElementById('chart-container');
-  chartContainer.appendChild(newCanvas);
   ctx = document.getElementById("myChart");
   myChart = new Chart(ctx, config);
 
@@ -98,8 +115,17 @@ document.getElementById('button').addEventListener('click', function() {
 
 });
 
+// REMOVE EXISTING CANVAS (IF ANY) AND RENDERS NEW CANVAS
+function resetCanvas(ctx) {
+  if (ctx) {
+    ctx.remove();
+  }
 
-
+  let newCanvas = document.createElement('canvas');
+  newCanvas.setAttribute("id", "myChart");
+  let chartContainer = document.getElementById('chart-container');
+  chartContainer.appendChild(newCanvas);
+}
 
 // TOGGLE SHOW/HIDE DIRECTIONS
 document.getElementById("toggle-btn").addEventListener('click', function() {
