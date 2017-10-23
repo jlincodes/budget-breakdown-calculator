@@ -74,9 +74,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // SAMPLE DATA FOR INITIAL CHART RENDER
-let budget = 2000;
 let dataArr = [1000, 50, 50, 50, 100, 100, 100, 100, 100, 100, 250];
-let excess = 250;
 
 // DOUGHNUT CHART
 let config = {
@@ -156,9 +154,9 @@ document.getElementById('button').addEventListener('click', function() {
     expensesSum += data;
   }
 
-  budget = parseFloat(document.getElementById("budget").value);
+  let budget = parseFloat(document.getElementById("budget").value);
   if (!budget) budget = 0;
-  excess = budget - expensesSum;
+  let excess = budget - expensesSum;
   dataArr.push(excess);
 
   // RENDER EXCESS AMOUNT INTO FIELD
