@@ -9,74 +9,79 @@
     <!-- HEADER -->
     <div class="container" id="header">
       <h1>Basic Budget Calculator</h1>
+      <input type="button" id="toggle-btn" class="button" value="Show Directions">
+      <br/>
+      <br/>
+      <p id="directions" style="display:none">
+        Enter a total monthly budget. Then type in a budget amount for each subcategory (numbers only, please). Lastly, hit calculate to render a doughnut chart of your monthly expenses.
+      </p>
+
+      <br/>
     </div>
 
     <div class="container">
       <div class="col-md-5">
-        <input type="button" id="toggle-btn" class="button" value="Show Directions">
-        <br/>
-        <br/>
-        <p id="directions" style="display:none">
-          Enter a total monthly budget. Then type in a budget amount for each subcategory (numbers only, please). Lastly, hit calculate to render a doughnut chart of your monthly expenses.
-        </p>
-
-        <br/>
         <form id="budget-form" class="budget-form">
           <label>Monthly Budget:
-            <input type="text" id="budget" name="" value="">
+            <input type="text" id="budget" name="" value="2000">
           </label>
           <h3>Fixed Expenses</h3>
           <label>Rent:
-            <input type="text" id="rent" class="expense" name="rent" value="">
+            <input type="text" id="rent" class="expense" name="rent" value="1000">
           </label>
           <label>Utilities:
-            <input type="text" id="util" class="expense" name="util" value="">
+            <input type="text" id="util" class="expense" name="util" value="50">
           </label>
           <label>Cellular:
-            <input type="text" id="cell" class="expense" name="cell" value="">
+            <input type="text" id="cell" class="expense" name="cell" value="50">
           </label>
           <label>Internet:
-            <input type="text" id="internet" class="expense" name="internet" value="">
+            <input type="text" id="internet" class="expense" name="internet" value="50">
           </label>
 
           <h3>Investments/Savings</h3>
           <label>Retirement (401K/Roth IRA/etc.):
-            <input type="text" id="retirement" class="expense" name="retirement" value="">
+            <input type="text" id="retirement" class="expense" name="retirement" value="100">
           </label>
           <label>Savings:
-            <input type="text" id="savings" class="expense" name="savings" value="">
+            <input type="text" id="savings" class="expense" name="savings" value="100">
           </label>
 
           <h3>Variable Expenses</h3>
           <label>Groceries:
-            <input type="text" id="groceries" class="expense" name="groceries" value="">
+            <input type="text" id="groceries" class="expense" name="groceries" value="100">
           </label>
           <label>Household Supplies:
-            <input type="text" id="hSupplies" class="expense" name="hSupplies" value="">
+            <input type="text" id="hSupplies" class="expense" name="hSupplies" value="100">
           </label>
           <label>Personal Supplies:
-            <input type="text" id="pSupplies" class="expense" name="pSupplies" value="">
+            <input type="text" id="pSupplies" class="expense" name="pSupplies" value="100">
           </label>
           <label>Transportation:
-            <input type="text" id="transport" class="expense" name="transport" value="">
+            <input type="text" id="transport" class="expense" name="transport" value="100">
           </label>
 
-          <h3>Guilt-free Spending</h3>
-          <label>Dining out, movies, shopping, etc.
-            <br/>
-            (This will be calculated for you)
-            <input type="text" id="excess" value="" disabled></label>
 
             <input type="button" id ="button" class="button" value="Calculate">
           </form>
       </div>
-      <div id="chart-container" class="col-md-7">
-        <canvas id="myChart"></canvas>
-        <div id="error"></div>
+      <div class="col-md-7">
+        <div id="chart-container" class="">
+          <canvas id="myChart"></canvas>
+          <div id="error"></div>
+        </div>
+        <div>
+          <form class='guilt-free-form'>
+            <h3>Guilt-free Spending</h3>
+            <label>Dining out, movies, shopping, etc.
+              <br/>
+              (This will be calculated for you)
+              <input class='guilt-free-input' type="text" id="excess" value="" disabled>
+            </label>
+          </form>
+        </div>
       </div>
     </div>
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
