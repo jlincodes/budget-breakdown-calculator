@@ -29,24 +29,142 @@ This project will be implemented with the following technologies:
 - `Chart.js` for constructing the data visualization component.
 - Bootstrap for responsive web design.
 
-### Implementation Timeline
+### The Chart
+The initial chart rendering:
+```JavaScript
+// SAMPLE DATA FOR INITIAL CHART RENDER
+let dataArr = [1000, 50, 50, 50, 100, 100, 100, 100, 100, 100, 250];
 
-**Over the weekend**:
-- Set up webpack base for project.
+// DOUGHNUT CHART
+let config = {
+  type: 'doughnut',
+  data: {
+    datasets: [{
+      label: 'Expenses',
+      data: dataArr,
+      backgroundColor: [
+        'rgb(255, 128, 128)',
+        'rgb(255,0,0)',
+        'rgb(255,165,0)',
+        'rgb(255,255,0)',
+        'rgb(128, 255, 191)',
+        'rgb(0,255,0)',
+        'rgb(51, 153, 255)',
+        'rgb(0, 0, 255)',
+        'rgb(128, 128, 255)',
+        'rgb(102, 0, 204)',
+        'rgb(128, 0, 128)'
+      ]
+    }
+  ],
+  labels: ["Rent", "Utilities", "Cell", "Internet", "Retirement",
+  "Savings", "Groceries", "Household", "Personal", "Transport",
+  "Guilt-free"]
+  },
+  options: {
+    responsive: true,
+    legend: {
+      position: 'right'
+    },
+    title: {
+      display: true,
+      text: 'Monthly Expenses'
+    },
+    animation: {
+      animateScale: true,
+      animateRotate: true
+    }
+  }
+};
 
-**Day 1**:
-- Set up a general layout of HTML page for user inputs.
-- Set up functions to perform calculations.
+// INITIAL RENDER OF CHART UPON WINDOW LOAD
+window.onload = function() {
+  let ctx = document.getElementById("myChart");
+  let myChart;
 
-**Day 2**:
-- Learn `Chart.js` and render data visualization.
+  resetCanvas(ctx);
 
-**Day 3**:
-- Continue working on functionality, fix bugs and errors.
-- Start on styling and presentation.
+  ctx = document.getElementById("myChart");
+  myChart = new Chart(ctx, config);
+};
+```
 
-**Day 4**:
-- Styling and presentation.
+Updating the chart with user input after clicking the "Calculate" button:
+
+```JavaScript
+// RENDERS DOUGHNUT CHART UPON CALCULATE CLICK
+document.getElementById('button').addEventListener('click', function() {
+  let errContainer = document.getElementById('error');
+  errContainer.innerHTML = "";
+
+  // Creates array-like object
+  let expenses = document.getElementsByClassName("expense");
+
+  dataArr = [];
+  let data;
+  let expensesSum = 0;
+
+  // Iterate through array-like object to fetch & parse data
+  let i;
+  for (i = 0; i < expenses.length; i++) {
+    data = parseFloat(expenses[i].value);
+
+    if (!data) {
+      data = 0;
+    }
+
+    dataArr.push(data);
+    expensesSum += data;
+  }
+
+  let budget = parseFloat(document.getElementById("budget").value);
+  if (!budget) budget = 0;
+  let excess = budget - expensesSum;
+  dataArr.push(excess);
+
+  // RENDER EXCESS AMOUNT INTO FIELD
+  document.getElementById("excess").value = excess;
+
+  // REPLACES SAMPLE DATA WITH DATA FROM FORM INPUT
+  config.data.datasets.forEach( (dataset) => {
+    dataset.data = dataArr;
+  });
+
+
+  let ctx = document.getElementById("myChart");
+  let myChart;
+
+  resetCanvas(ctx);
+
+  ctx = document.getElementById("myChart");
+  myChart = new Chart(ctx, config);
+
+// RENDERS ERROR MSG IF BUDGET IS EXCEEDED
+  if (excess < 0) {
+    ctx.remove();
+    errContainer.innerHTML =
+    '<p>Whoops. Total expenses cannot be greater than monthly budget.</p>' +
+    '<p>Try readjusting your variable expenses or increasing your monthly budget.</p>';
+  }
+
+});
+```
+
+A bug that I ran into while working on this project is that every time the calculate button is clicked, a new chart is rendered on top of the previous chart. The work-around for this is to check if there is an existing chart, delete that chart and render a new chart:
+
+```JavaScript
+// REMOVE EXISTING CANVAS (IF ANY) AND RENDERS NEW CANVAS
+function resetCanvas(ctx) {
+  if (ctx) {
+    ctx.remove();
+  }
+
+  let newCanvas = document.createElement('canvas');
+  newCanvas.setAttribute("id", "myChart");
+  let chartContainer = document.getElementById('chart-container');
+  chartContainer.appendChild(newCanvas);
+}
+```
 
 
 ### Bonus features
