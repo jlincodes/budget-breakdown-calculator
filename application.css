@@ -1,6 +1,8 @@
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #edf2fc;
+  color: white;
+  /* background-color: #edf2fc; */
+  background: linear-gradient(to right, rgba(14, 99, 237, 1), rgba(224, 234, 255, .8));
 }
 
 h1 {
@@ -13,12 +15,18 @@ form {
   flex-direction: column;
 }
 
+.guilt-free-form {
+  margin: 50px auto;
+  padding: 0 75px;
+}
+
 label {
   margin: 0 0 5px 0;
 }
 
 input {
   font-size: 14px;
+  color: black;
   display: inline-block;
   float: right;
   text-align: right;
@@ -26,13 +34,14 @@ input {
 
 input:focus {
   outline-style: dotted;
-  outline-color: ##e8eaf2;
-  outline-width: medium;
+  outline-color: rgba(177, 186, 211, 1);
+  outline-width: thin;
 }
 
 .button {
   cursor: pointer;
   font-size: 14px;
+  color: white;
   border-radius: 3px;
   border: 1px solid #afafaf;
   background-color: transparent;
@@ -42,7 +51,12 @@ input:focus {
 }
 
 .button:hover {
-  box-shadow: 3px 3px 1px #a3a3a3;
+  font-weight: bolder;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transition: 1s;
+  -webkit-transition: 1s;
 }
 
 #toggle-btn {
