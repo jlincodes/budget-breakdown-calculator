@@ -171,7 +171,7 @@ function resetCanvas(ctx) {
 - Render addition chart (bar, line, etc) to render expenses by umbrella categories.
 - Financial tips to help users become more financially savvy.
 
-[screenshot]:https://github.com/julielin0812/budget-breakdown-calculator/blob/master/docs/Screenshots/Oct-23-2017%2016-47-16.gif?raw=true
+[screenshot]: ./docs/Screenshots/bbc-normal-std.gif
 
 <!-- ## Extra to-dos:
 - [x] Make it work if I accidentally clear an input field. (I did that, and it told me that my guilt-free spending was NaN.)
