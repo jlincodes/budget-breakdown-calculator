@@ -71,3 +71,13 @@ input:focus {
   font-weight: bold;
   text-align: center;
 }
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+footer a:hover {
+  color: black;
+}
