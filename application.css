@@ -76,6 +76,15 @@ footer ul {
   list-style: none;
   padding: 0;
   display: flex;
+  justify-content: center;
+}
+
+footer li {
+  margin: auto 10px;
+}
+
+footer a {
+  color: white;
 }
 
 footer a:hover {
